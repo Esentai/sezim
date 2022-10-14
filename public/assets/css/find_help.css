@@ -1,0 +1,204 @@
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+body {
+    background: #ffffff;    
+}
+
+header {
+    position: fixed;
+    background: #0c093e;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+header.dark {
+    background: #0c093e;
+}
+.navbar.navbar-expand-lg {
+    padding: 27px 0;
+}
+.navbar-brand {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+}
+.navbar-brand:hover {
+    color: #000;
+}
+header.dark .navbar-brand {
+    color: #fff;
+}
+header.dark .navbar-brand:hover {
+    color: #fff;
+}
+.nav-link {
+    color: rgb(255, 255, 255);
+    margin-right: 8px;
+    margin-left: 8px;
+}
+.nav-link:hover {
+    color: rgb(255, 255, 255);
+}
+header.dark .nav-link {
+    color: #333333;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 22px;
+}
+.header__button {
+    font-weight: 500;
+    font-size: 14px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-decoration-line: underline;
+    width: 157px;
+    height: 54px;
+    left: 1255px;
+    top: 37px;
+    background: linear-gradient(178.18deg, #FD749B -13.56%, #281AC8 158.3%);
+    border-radius: 100px;
+    -webkit-transition: all ease 0.3s;
+       -moz-transition: all ease 0.3s;
+        -ms-transition: all ease 0.3s;
+         -o-transition: all ease 0.3s;
+            transition: all ease 0.3s;
+}
+.header__button:hover {
+    color: #000000;
+    background: #fff;
+}
+
+#help-hero {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    margin-top: 100px;
+    background-color: #0c093e;
+}
+.hero-title {
+    width: 537px;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 60px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+footer {
+    margin-bottom: 50px;
+}
+.footer-items {
+    display: flex;
+    justify-content: space-between;
+}
+.footer-items a {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 250%;
+    text-decoration: none;
+    color: #212353;
+}
+.footer-items ul {
+    list-style-type: none;
+    padding-left: 0px;
+}
+.footer-items li {
+    margin-top: 0px;
+}
+.footer-items-lead {
+    margin-bottom: 40px;
+}
+.footer-col-1 {
+
+}
+.footer-col-2 {
+
+}
+.footer-col-3 {
+
+}
+.footer-col-4 {
+}
+
+
+
+.social a {
+    text-align: center;
+    width: 56px;
+    height: 56px;
+    float: left;
+    background: #ccc;
+    border: 1px solid #ccc;
+    border-radius: 56px;
+    margin: 0 10px 10px 0;
+    padding: 12px;
+    color: rgb(255, 255, 255);
+}
+.twitter a:hover {background: #00acee; color: #fff;}
+.instagram a:hover {background: #3f729b; color: #fff;}
+.facebook a:hover {background: #3b5998; color: #fff;}
+
+@media (max-width: 767px) {
+    header.dark-2-light {
+        background: #f5f5f5;
+        box-shadow: #000 0 0 30px -10px;
+    }
+    header.dark-2-light .navbar-brand {
+        color: #000; 
+    }
+    header.dark-2-light .nav-link {
+        color: #000;
+    }
+    .header__button {
+        width: 190px;
+        height: 50px;
+    }
+    header .header__button {
+        width: 100%;
+        height: 55px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+    .navbar.navbar-expand-lg {
+        padding: 13px 0;
+    }
+    .navbar-toggler:focus {
+        box-shadow: none;
+    }
+    .navbar-toggler-icon {
+        background: url(../img/menu-open.png);
+        width: 44px;
+        height: 44px;
+    }
+    .nav-item.header__item {
+        border-bottom: 1px solid #939393;
+        width: 100%;
+    }
+    .nav-item.header__item:nth-child(4) {
+        border-bottom: none;
+    }
+    .navbar-nav {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        -webkit-align-items: start !important;
+                align-items: start !important;
+    }
+    .nav-link {
+        margin: 0; 
+        font-size: 24px;
+        font-weight: 600;
+        padding: 15px 0;
+    }
+    #banner {
+        margin-top: 80px;
+    }
+    .hero-title {
+        font-size: 36px;
+        text-align: center;
+    }
+}
