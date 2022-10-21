@@ -5,13 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class CreateController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('auth');
@@ -24,7 +19,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $articles = Article::all();
-        return view('home', compact('articles'));
+        return view('create');
     }
+
+    public function store(Request $request){
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required'
+        ]);
+
+        Article::create($request->post());
+
+        return redirect()->route('home');
+
+    }
+
 }

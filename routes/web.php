@@ -20,3 +20,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/create', [App\Http\Controllers\CreateController::class, 'index'])->name('create');
+Route::post('/create', [App\Http\Controllers\CreateController::class, 'store'])->name('store');
+
+Route::get('/show/{article}', [App\Http\Controllers\ShowController::class, 'index'])->name('show');
+
+Route::post('/show/{article}', [App\Http\Controllers\CommentController::class, 'store'])->name('comment');
