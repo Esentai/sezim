@@ -46,10 +46,10 @@
                         </li>
 
                     </ul>
-                    <a href="/login" class="header__button d-md-none open-form">LOGIN</a>
+                    <a href="/login" class="header__button d-md-none open-form">{{ Auth::user()->name ?? 'LOGIN'}}</a>
                 </div>
             </div>
-            <a href="/login" class="header__button d-none d-md-flex">LOGIN</a>
+            <a href="/login" class="header__button d-none d-md-flex">{{ Auth::user()->name ?? 'LOGIN'}}</a>
         </nav>
     </div>
 </header>

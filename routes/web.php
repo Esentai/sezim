@@ -21,6 +21,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
+
+
 Route::get('/create', [App\Http\Controllers\CreateController::class, 'index'])->name('create');
 Route::post('/create', [App\Http\Controllers\CreateController::class, 'store'])->name('store');
 
