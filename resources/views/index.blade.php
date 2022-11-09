@@ -94,6 +94,7 @@
     <div class="container">
         <div class="third-block">
             <h2>How are you feeling today?</h2>
+
             <div class="block-left">
                 <ul class="left-list">
                     <li>
@@ -122,25 +123,25 @@
                     </li>
                 </ul>
             </div>
-            <div class="block-right">
-                <div class="right-up">
-                    <div class="third-card1">
 
-                    </div>
-                    <div class="third-card2">
-
-                    </div>
-                </div>
-                <div class="right-down">
-                    <div class="third-card3">
-
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>
+<section id="fourth">
+    <div class="container">
+        <h2>Articles</h2>
+        <img src="{{asset('assets/img/line-4.png')}}">
+        <div class="articles">
+            @foreach($articles as $article)
+            <div class="article">
+                <h3>{{$article->title}}</h3>
+                <p>{{$article->description}}</p>
+            </div>
+            @endforeach
+        </div>
 
+    </div>
+</section>
 <section id="fourth">
     <div class="container">
         <h2>Recent Webinars</h2>

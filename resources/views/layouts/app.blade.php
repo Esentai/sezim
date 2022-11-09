@@ -156,6 +156,7 @@
             </div>
         </nav>
         <!-- Side-Nav -->
+        @auth
         <div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar">
             <ul class="nav flex-column text-white w-100">
                 <br>
@@ -170,9 +171,9 @@
                     <i style="font-size: 20px" class="bx bx-user-check"></i>
                     <span style="font-size: 20px" class="mx-2">Profile</span>
                 </a>
-                <a href="#" style="color: #1a202c" class="nav-link">
+                <a href="{{route('tasks')}}" style="color: #1a202c" class="nav-link">
                     <i style="font-size: 20px" class="bx bx-conversation"></i>
-                    <span style="font-size: 20px" class="mx-2">Contact</span>
+                    <span style="font-size: 20px" class="mx-2">Tasks</span>
                 </a>
             </ul>
 
@@ -182,7 +183,8 @@
       <a href=""><i class="bx bxl-facebook text-white"></i></a>
     </span>
         </div>
-        <main class="py-4">
+        @endauth
+        <main style="padding-left:300px" class="py-4">
             <br>
             <br>
             <br>
