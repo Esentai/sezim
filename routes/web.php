@@ -24,6 +24,7 @@ Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])
 Route::post('/profile', [App\Http\Controllers\ProfileController::class, 'store'])->name('profile.store');
 
 Route::get('/interview', [App\Http\Controllers\InterviewController::class, 'index'])->name('interview');
+Route::get('/msq', [App\Http\Controllers\InterviewController::class, 'msq'])->name('interview.msq');
 
 Route::get('/tasks', [App\Http\Controllers\TaskController::class, 'index'])->name('tasks');
 

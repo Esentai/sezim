@@ -15,4 +15,8 @@ class InterviewController extends Controller
     {
         return view('interview');
     }
+
+    public function msq(){
+        return view('msq');
+    }
 }

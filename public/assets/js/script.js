@@ -90,3 +90,5 @@ $('body').on('submit', 'form[data-content="main-form-2"]', function(event) {
     $('#modalSuccess2').removeClass('hide');
     return false;
 });
+
+
