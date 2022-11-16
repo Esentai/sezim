@@ -175,6 +175,17 @@
                     <i style="font-size: 20px" class="bx bx-conversation"></i>
                     <span style="font-size: 20px" class="mx-2">Tasks</span>
                 </a>
+                <a href="{{route('interview')}}" style="color: #1a202c" class="nav-link">
+                    <i style="font-size: 20px" class="bx bxs-quote-alt-left"></i>
+                    <span style="font-size: 20px" class="mx-2">Interview</span>
+                </a>
+               @if(Auth::user()->email == 'admin@gmail.com')
+                <a href="{{route('admin')}}" style="color: #1a202c" class="nav-link">
+                    <i style="font-size: 20px" class="bx bx-book"></i>
+                    <span style="font-size: 20px" class="mx-2">Admin</span>
+                </a>
+                @endif
+
             </ul>
 
             <span href="#" class="nav-link h4 w-100 mb-5">
@@ -192,6 +203,7 @@
             @yield('content')
         </main>
     </div>
+
     <!-- bootstrap js -->
 {{--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>--}}
 </body>
