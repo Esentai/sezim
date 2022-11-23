@@ -33,6 +33,12 @@ Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->na
 Route::get('/addtask', [App\Http\Controllers\AddtaskController::class, 'index'])->name('addTask');
 Route::post('/addtask', [App\Http\Controllers\AddtaskController::class, 'store'])->name('storeTask');
 
+Route::post('/msq', [App\Http\Controllers\InterviewController::class, 'store'])->name('storeMsq');
+
+
+Route::get('/questions', [App\Http\Controllers\QuestionController::class, 'index'])->name('questions');
+Route::post('/questions', [App\Http\Controllers\QuestionController::class, 'store'])->name('questions.add');
+
 
 Route::get('/create', [App\Http\Controllers\CreateController::class, 'index'])->name('create');
 Route::post('/create', [App\Http\Controllers\CreateController::class, 'store'])->name('store');

@@ -104,6 +104,7 @@
         <tr>
             <th colspan="4"> <a href="{{route('addTask')}}" class="btn btn-primary">Add Task</a></th>
         </tr>
+
         </tbody>
     </table>
 </div>

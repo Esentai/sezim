@@ -184,6 +184,10 @@
                     <i style="font-size: 20px" class="bx bx-book"></i>
                     <span style="font-size: 20px" class="mx-2">Admin</span>
                 </a>
+                <a href="{{route('questions')}}" style="color: #1a202c" class="nav-link">
+                    <i style="font-size: 20px" class="bx bx-book"></i>
+                    <span style="font-size: 20px" class="mx-2">Questions</span>
+                </a>
                 @endif
 
             </ul>

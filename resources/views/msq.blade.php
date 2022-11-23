@@ -57,35 +57,44 @@
                     <div class="border">
                         <div class="question bg-white p-3 border-bottom">
                             <div class="d-flex flex-row justify-content-between align-items-center mcq">
-                                <h4>Test</h4><span>(1 of 20)</span></div>
+                                <h4>Test</h4></div>
                         </div>
-                        <div class="question bg-white p-3 border-bottom">
-                            <div class="d-flex flex-row align-items-center question-title">
-                                <h3 class="text" style="color: #b247a7">Q.</h3>
-                                <h5 class="mt-1 ml-2">Сниженное настроение</h5>
+                        <form action="{{route('storeMsq')}}" method="post">
+                            @csrf
+                            @foreach($questions as $question)
+                            <div class="question bg-white p-3 border-bottom">
+                                <div class="d-flex flex-row align-items-center question-title">
+                                    <h3 class="text" style="color: #b247a7">Q.</h3>
+                                    <h5 class="mt-1 ml-2">{{$question->name}}</h5>
+                                </div>
+                                <div class="ans ml-2">
+                                    <label class="radio"> <input type="radio" name="{{$question->question_id}}" value="1"> <span>{{$question->v1}}</span>
+                                    </label>
+                                </div>
+                                <div class="ans ml-2">
+                                    <label class="radio"> <input type="radio" name="{{$question->question_id}}" value="2"> <span>{{$question->v2}}</span>
+                                    </label>
+                                </div>
+                                <div class="ans ml-2">
+                                    <label class="radio"> <input type="radio" name="{{$question->question_id}}" value="3"> <span>{{$question->v3}}</span>
+                                    </label>
+                                </div>
+                                <div class="ans ml-2">
+                                    <label class="radio"> <input type="radio" name="{{$question->question_id}}" value="4"> <span>{{$question->v4}}</span>
+                                    </label>
+                                </div>
+                                <div class="ans ml-2">
+                                    <label class="radio"> <input type="radio" name="{{$question->question_id}}" value="5"> <span>{{$question->v5}}</span>
+                                    </label>
+                                </div>
                             </div>
-                            <div class="ans ml-2">
-                                <label class="radio"> <input type="radio" name="first" value="Вовсе нет"> <span>Вовсе нет</span>
-                                </label>
+                            @endforeach
+                            <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
+                                <button class="btn btn-primary border-success align-items-center btn-success" type="submit">
+                                    Finish<i class="fa fa-angle-right ml-2"></i>
+                                </button>
                             </div>
-                            <div class="ans ml-2">
-                                <label class="radio"> <input type="radio" name="first" value="Редко"> <span>Редко</span>
-                                </label>
-                            </div>
-                            <div class="ans ml-2">
-                                <label class="radio"> <input type="radio" name="first" value="Иногда"> <span>Иногда</span>
-                                </label>
-                            </div>
-                            <div class="ans ml-2">
-                                <label class="radio"> <input type="radio" name="first" value="Часто"> <span>Часто</span>
-                                </label>
-                            </div>
-                            <div class="ans ml-2">
-                                <label class="radio"> <input type="radio" name="first" value="Постоянно"> <span>Постоянно</span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white"><button class="btn btn-primary d-flex align-items-center btn-danger" type="button"><i class="fa fa-angle-left mt-1 mr-1"></i>&nbsp;previous</button><button class="btn btn-primary border-success align-items-center btn-success" type="button">Next<i class="fa fa-angle-right ml-2"></i></button></div>
+                        </form>
                     </div>
                 </div>
             </div>
