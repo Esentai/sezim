@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Question;
 use App\Models\Task;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -21,9 +23,11 @@ class AdminController extends Controller
             $users = User::all();
             $tasks = Task::all();
             $articles = Article::all();
-            return view('admin', compact('users', 'tasks', 'articles'));
+            $questions = Question::all();
+            return view('admin', compact('users', 'tasks', 'articles', 'questions'));
         }else{
             return view('home');
         }
     }
+
 }

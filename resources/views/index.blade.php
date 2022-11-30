@@ -60,7 +60,7 @@
             <div class="hero-inner">
                 <h1 class="hero-title">We’d like to improve the quality of your life through your own assistance!</h1>
                 <p class="hero-text d-none d-md-block">Sezin is a platform that treats people as individuals, promoting respect, dignity and recognising</p>
-                <a href="#modal-signin" class="hero__button">GET STARTED</a>
+                <a href="{{route('interview')}}" class="hero__button">GET STARTED</a>
             </div>
         </div>
     </div>

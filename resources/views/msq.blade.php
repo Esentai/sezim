@@ -68,23 +68,23 @@
                                     <h5 class="mt-1 ml-2">{{$question->name}}</h5>
                                 </div>
                                 <div class="ans ml-2">
-                                    <label class="radio"> <input type="radio" name="{{$question->question_id}}" value="1"> <span>{{$question->v1}}</span>
+                                    <label class="radio"> <input type="radio" name="{{$question->question_id}}" value="0"> <span>{{$question->v1}}</span>
                                     </label>
                                 </div>
                                 <div class="ans ml-2">
-                                    <label class="radio"> <input type="radio" name="{{$question->question_id}}" value="2"> <span>{{$question->v2}}</span>
+                                    <label class="radio"> <input type="radio" name="{{$question->question_id}}" value="1"> <span>{{$question->v2}}</span>
                                     </label>
                                 </div>
                                 <div class="ans ml-2">
-                                    <label class="radio"> <input type="radio" name="{{$question->question_id}}" value="3"> <span>{{$question->v3}}</span>
+                                    <label class="radio"> <input type="radio" name="{{$question->question_id}}" value="2"> <span>{{$question->v3}}</span>
                                     </label>
                                 </div>
                                 <div class="ans ml-2">
-                                    <label class="radio"> <input type="radio" name="{{$question->question_id}}" value="4"> <span>{{$question->v4}}</span>
+                                    <label class="radio"> <input type="radio" name="{{$question->question_id}}" value="3"> <span>{{$question->v4}}</span>
                                     </label>
                                 </div>
                                 <div class="ans ml-2">
-                                    <label class="radio"> <input type="radio" name="{{$question->question_id}}" value="5"> <span>{{$question->v5}}</span>
+                                    <label class="radio"> <input type="radio" name="{{$question->question_id}}" value="4"> <span>{{$question->v5}}</span>
                                     </label>
                                 </div>
                             </div>

@@ -48,12 +48,17 @@
                     <th>{{$loop->index+1}}</th>
                     <th>{{$user->name}}</th>
                     <th>{{$user->email}}</th>
-                    <th><a href="#">Edit</a> <a href="#">Delete</a> </th>
+                    <th>
+                        @if($user->id != 7)
+                            <form action="{{route('user.delete')}}" method="post">
+                                @csrf
+                                <input style="display: none" type="text" name="id" value="{{$user->id}}">
+                                <button class="btn btn-danger" type="submit">Delete</button>
+                            </form>
+                        @endif
+                    </th>
                 </tr>
             @endforeach
-        <tr>
-           <th colspan="4"> <button class="btn btn-primary">Add User</button></th>
-        </tr>
         </tbody>
     </table>
     <br>
@@ -73,7 +78,13 @@
                 <th>{{$loop->index+1}}</th>
                 <th>{{$article->title}}</th>
                 <th>{{$article->description}}</th>
-                <th><a href="#">Edit</a> <a href="#">Delete</a> </th>
+                <th>
+                    <form action="{{route('article.delete')}}" method="post">
+                        @csrf
+                        <input style="display: none" type="text" name="id" value="{{$article->id}}">
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                    </form>
+                </th>
             </tr>
         @endforeach
             <tr>
@@ -98,7 +109,13 @@
                 <th>{{$loop->index+1}}</th>
                 <th>{{$task->title}}</th>
                 <th>{{$task->description}}</th>
-                <th><a href="#">Edit</a> <a href="#">Delete</a> </th>
+                <th>
+                    <form action="{{route('task.delete')}}" method="post">
+                        @csrf
+                        <input style="display: none" type="text" name="id" value="{{$task->id}}">
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                    </form>
+                </th>
             </tr>
         @endforeach
         <tr>
@@ -107,5 +124,47 @@
 
         </tbody>
     </table>
+
+    <br>
+    <h3>Questions</h3>
+    <table class="styled-table">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>1 variant</th>
+            <th>2 variant</th>
+            <th>3 variant</th>
+            <th>4 variant</th>
+            <th>5 variant</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($questions as $question)
+            <tr>
+                <th>{{$loop->index+1}}</th>
+                <th>{{$question->name}}</th>
+                <th>{{$question->v1}}</th>
+                <th>{{$question->v2}}</th>
+                <th>{{$question->v3}}</th>
+                <th>{{$question->v4}}</th>
+                <th>{{$question->v5}}</th>
+                <th>
+                    <form action="{{route('question.delete')}}" method="post">
+                        @csrf
+                        <input style="display: none" type="text" name="id" value="{{$question->id}}">
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                    </form>
+                </th>
+            </tr>
+        @endforeach
+        <tr>
+            <th colspan="4"> <a href="{{route('questions')}}" class="btn btn-primary">Add Question</a></th>
+        </tr>
+
+        </tbody>
+    </table>
+
 </div>
 @endsection

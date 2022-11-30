@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tasks', function (Blueprint $table) {
+        Schema::create('my_tasks', function (Blueprint $table) {
             $table->id();
+            $table->string('user_id');
+            $table->string('task_id');
+            $table->string('status');
             $table->timestamps();
-            $table->string('title');
-            $table->text('description');
-            $table->text('score');
         });
     }
 
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tasks');
+        Schema::dropIfExists('my_tasks');
     }
 };

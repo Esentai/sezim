@@ -167,38 +167,95 @@
         #scales{
             margin: 0 15px;
         }
+        table{
+            width: 100%;
+            margin-top: 30px;
+            background-color: #fff;
+        }
+        th,td{
+            border: 1px solid #000;
+            padding: 15px;
+        }
+        th{
+            font-weight: bold;
+        }
+        table button {
+            margin: 10px;
+        }
     </style>
-    <h1>Tasks</h1>
-    <div class="row d-flex justify-content-center container" style="height: 100vh;">
+    <h1>My Tasks</h1>
+    <div class="row d-flex justify-content-center container" >
         <div class="col-md-12">
             <div class="card-hover-shadow-2x mb-3 card">
                 <div class="card-header-tab card-header">
                     <div class="card-header-title font-size-lg text-capitalize font-weight-normal"><i
-                            class="fa fa-tasks"></i>&nbsp;Task Lists</div>
+                            class="fa fa-tasks"></i>My Tasks</div>
 
                 </div>
                 <div class="">
                         <div  class="ps ps--active-y">
                             <div class="ps-content">
-                                @foreach($tasks as $task)
-                                    <div class="tasks_container item">
-                                        <div class="indi bg-success"></div>
-                                        <input type="checkbox" id="scales" name="scales">
+                                @foreach($myTasks as $myTask)
+                                    @foreach($tasks as $task)
+                                        @if($myTask->status == "Accept" && $myTask->task_id == $task->id )
+                                            <div class="tasks_container item">
+                                                <div class="indi bg-success"></div>
+        {{--                                        <input type="checkbox" id="scales" name="scales">--}}
 
-                                        <div class="task">
-                                            <h4>{{$loop->index + 1}}. {{$task->title}}</h4>
-                                            <p>{{$task->description}}</p>
+                                                <div class="task">
+                                                    <h4>{{$task->title}}</h4>
+                                                    <p>{{$task->description}}</p>
 
-                                        </div>
-                                    </div>
+                                                </div>
+                                            </div>
+                                        @endif
+                                    @endforeach
                                 @endforeach
                             </div>
                         </div>
 
                 </div>
-                <div class="d-block text-right card-footer"><a href="{{route('addTask')}}"
-                        class="btn btn-primary">Add Task</a></div>
+{{--                <div class="d-block text-right card-footer"><a href="{{route('addTask')}}"--}}
+{{--                        class="btn btn-primary">Add Task</a></div>--}}
             </div>
         </div>
+    </div>
+    <br>
+    <h1>Recommended tasks for you</h1>
+    <div class="container">
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+            @php
+                $i = 0;
+            @endphp
+            @foreach($myTasks as $myTask)
+                @foreach($tasks as $task)
+                    @if($myTask->task_id == $task->id && $myTask->status == '0')
+                        @php
+                            $i++;
+                        @endphp
+                    <tr>
+                        <td>{{$i}}</td>
+                        <th>
+                            <h3>{{$task->title}}</h3>
+                            <p>{{$task->description}}</p>
+                        </th>
+                        <th>
+                            <form action="{{route('taskStatus')}}" method="post">
+                                @csrf
+                                <input type="text" name="taskID" value="{{$task->id}}" style="display: none">
+                                <button type="submit" class="btn btn-success">Accept</button>
+                            </form>
+                            <button class="btn btn-danger">Reject</button>
+                        </th>
+                    </tr>
+                    @endif
+                @endforeach
+            @endforeach
+        </table>
     </div>
 @endsection

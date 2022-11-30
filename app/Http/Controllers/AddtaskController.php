@@ -15,7 +15,8 @@ class AddtaskController extends Controller
     public function store(Request $request){
         $request->validate([
             'title' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'score' => 'required',
         ]);
 
         Task::create($request->post());

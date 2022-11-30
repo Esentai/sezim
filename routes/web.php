@@ -20,15 +20,24 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 Route::post('/profile', [App\Http\Controllers\ProfileController::class, 'store'])->name('profile.store');
+
 
 Route::get('/interview', [App\Http\Controllers\InterviewController::class, 'index'])->name('interview');
 Route::get('/msq', [App\Http\Controllers\InterviewController::class, 'msq'])->name('interview.msq');
 
 Route::get('/tasks', [App\Http\Controllers\TaskController::class, 'index'])->name('tasks');
+Route::post('/tasks', [App\Http\Controllers\TaskController::class, 'taskStatus'])->name('taskStatus');
+
 
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
+Route::post('/articledelete', [App\Http\Controllers\Admin\DestroyController::class, 'articleDestroy'])->name('article.delete');
+Route::post('/userdelete', [App\Http\Controllers\Admin\DestroyController::class, 'userDestroy'])->name('user.delete');
+Route::post('/taskdelete', [App\Http\Controllers\Admin\DestroyController::class, 'taskDestroy'])->name('task.delete');
+Route::post('/questiondelete', [App\Http\Controllers\Admin\DestroyController::class, 'questionDestroy'])->name('question.delete');
+
 
 Route::get('/addtask', [App\Http\Controllers\AddtaskController::class, 'index'])->name('addTask');
 Route::post('/addtask', [App\Http\Controllers\AddtaskController::class, 'store'])->name('storeTask');
