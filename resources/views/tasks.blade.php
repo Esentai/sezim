@@ -250,7 +250,12 @@
                                 <input type="text" name="taskID" value="{{$task->id}}" style="display: none">
                                 <button type="submit" class="btn btn-success">Accept</button>
                             </form>
-                            <button class="btn btn-danger">Reject</button>
+                            <form action="{{route('taskReject')}}" method="post">
+                                @csrf
+                                <input type="text" name="taskID" value="{{$task->id}}" style="display: none">
+                                <button class="btn btn-danger">Reject</button>
+                            </form>
+
                         </th>
                     </tr>
                     @endif

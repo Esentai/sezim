@@ -30,6 +30,7 @@ Route::get('/msq', [App\Http\Controllers\InterviewController::class, 'msq'])->na
 
 Route::get('/tasks', [App\Http\Controllers\TaskController::class, 'index'])->name('tasks');
 Route::post('/tasks', [App\Http\Controllers\TaskController::class, 'taskStatus'])->name('taskStatus');
+Route::post('/taskReject', [App\Http\Controllers\TaskController::class, 'taskReject'])->name('taskReject');
 
 
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');

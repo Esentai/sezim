@@ -34,6 +34,14 @@ class TaskController extends Controller
         $myTasks = DB::table('my_tasks')->where('user_id', Auth::user()->id)->get();
         $tasks = Task::all();
         return view('tasks', compact('tasks', 'myTasks'));
-
+    }
+    public function taskReject(Request $request){
+        //dd($request->taskID);
+        MyTask::where('user_id', Auth::user()->id)->where('task_id', $request->taskID )->update(array(
+            'status'=>'Reject',
+        ));
+        $myTasks = DB::table('my_tasks')->where('user_id', Auth::user()->id)->get();
+        $tasks = Task::all();
+        return view('tasks', compact('tasks', 'myTasks'));
     }
 }

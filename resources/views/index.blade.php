@@ -12,6 +12,20 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+
+    <style>
+        .bell{
+            position: absolute;
+            right: -2px;
+            top: -5px;
+            padding: 0 6px;
+            border-radius: 50%;
+            font-size: 14px ;
+            background-color: #a20b8d;
+            color: #fff;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -25,25 +39,30 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                 <div class="menu" style="padding-left: 180px;">
                     <ul class="navbar-nav mb-2 mb-lg-0 align-items-right">
-                        <li class="nav-item header__item" style="padding-left: 60px;">
+                        <li class="nav-item header__item" style="padding-left: 30px;">
                             <a href="index.html" class="nav-link">Home</a>
                         </li>
-                        <li class="nav-item header__item" style="padding-left: 60px;">
+                        <li class="nav-item header__item" style="padding-left: 30px;">
                             <a href="find_help.html" class="nav-link">Find Help</a>
                         </li>
-                        <li class="nav-item header__item" style="padding-left: 60px;">
+                        <li class="nav-item header__item" style="padding-left: 30px;">
                             <a href="" class="nav-link">Support</a>
                         </li>
-                        <li class="nav-item header__item" style="padding-left: 60px;">
+                        <li class="nav-item header__item" style="padding-left: 30px;">
                             <a href="" class="nav-link">Contact Us</a>
                         </li>
-                        <li class="nav-item header__item" style="padding-left: 60px;">
+                        <li class="nav-item header__item" style="padding-left: 30px;">
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Self-Improvement</a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Meditation</a>
                                 <a class="dropdown-item" href="#">Inspiration</a>
                             </div>
                         </li>
+                        @if(Auth::check())
+                        <li  class="nav-item header__item" style="padding-left: 20px;">
+                            <a style="position:relative;" href="{{route('tasks')}}"><img src="{{asset('assets/img/bell.png')}}" width="30" alt=""> <span class="bell">{{$taskCount}}</span></a>
+                        </li>
+                        @endif
 
                     </ul>
                     <a href="/login" class="header__button d-md-none open-form">{{ Auth::user()->name ?? 'LOGIN'}}</a>
